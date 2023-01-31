@@ -16,8 +16,8 @@ import java.util.List;
 public class ArticleController {
 		// 바로 커밋해 
 	// 바로 커밋해
-// 바로 커밋해
-	//asdasd
+// 바로 커밋해 asd asd
+	//asdasd 
     @Autowired
     private ArticleServiceImpl articleService;
 
