@@ -14,10 +14,8 @@ import java.util.List;
 @Controller
 @Slf4j
 public class ArticleController {
-		// 바로 커밋해 
-	// 바로 커밋해
-// 바로 커밋해 asd asd
-	//asdasd 
+// 내가 1등할거야
+
     @Autowired
     private ArticleServiceImpl articleService;
 
