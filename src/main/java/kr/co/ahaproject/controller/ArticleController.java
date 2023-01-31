@@ -17,6 +17,7 @@ public class ArticleController {
 		// 바로 커밋해 
 	// 바로 커밋해
 // 바로 커밋해
+	//asdasd
     @Autowired
     private ArticleServiceImpl articleService;
 
