@@ -36,7 +36,7 @@ public interface ArticleMapper {
             "userid = #{article.userid} " +
             "WHERE art_id = #{article.id}")
     int update(@Param("article")Article article);
-
+// s
     @Delete("DELETE FROM article " +
             "WHERE art_id = #{id}")
     int delete(int id);
