@@ -23,7 +23,7 @@ public interface ArticleMapper {
             @Result(property = "userid", column = "userid")
     })
     List<Article> selectAll();
-
+// !
     @Select("SELECT * FROM article WHERE art_id = #{id}")
     @ResultMap("ArticleMap")
     Article selectOne(int id);
