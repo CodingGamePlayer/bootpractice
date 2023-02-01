@@ -33,7 +33,7 @@ public class ArticleApiController {
     @PutMapping("/api/article/update")
     public ResponseEntity<Integer> update(@RequestBody ArticleDto articleDto){
 
-        log.info(articleDto.toString());
+//        log.info(articleDto.toString());
 
         articleDto.setModdate(LocalDate.now());
         int result = articleService.updateOne(articleDto);
