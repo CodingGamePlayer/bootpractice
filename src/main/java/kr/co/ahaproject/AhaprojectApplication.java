@@ -8,7 +8,8 @@ public class AhaprojectApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(AhaprojectApplication.class, args);
-//       hahahahaga아러ㅏ얼
-    }
 
+
+    }
+ 
 }
