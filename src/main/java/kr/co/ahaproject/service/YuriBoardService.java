@@ -2,32 +2,33 @@ package kr.co.ahaproject.service;
 
 import kr.co.ahaproject.dto.YuriBoardDTO;
 import kr.co.ahaproject.mapper.YuriBoardMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class YuriBoardService {
-
-    YuriBoardMapper boardMapper;
+    @Autowired
+    YuriBoardMapper yuriBoardMapper;
 
     public List<YuriBoardDTO> listAll(){
-        return boardMapper.listAll();
+        return yuriBoardMapper.listAll();
     }
 
     public YuriBoardDTO selectOne(int bno){
-        return boardMapper.selectOne(bno);
+        return yuriBoardMapper.selectOne(bno);
     }
 
     public int register(YuriBoardDTO boardDTO){
-        return boardMapper.register(boardDTO);
+        return yuriBoardMapper.register(boardDTO);
     }
 
     public int update(YuriBoardDTO boardDTO){
-        return boardMapper.update(boardDTO);
+        return yuriBoardMapper.update(boardDTO);
     }
 
     public int delete(int bno){
-        return boardMapper.delete(bno);
+        return yuriBoardMapper.delete(bno);
     }
 }

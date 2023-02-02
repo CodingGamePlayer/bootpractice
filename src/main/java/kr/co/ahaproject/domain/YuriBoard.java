@@ -1,9 +1,9 @@
-package kr.co.ahaproject.dto;
+package kr.co.ahaproject.domain;
 
 import lombok.Data;
 
 @Data
-public class YuriBoardDTO {
+public class YuriBoard {
 
     private int bno;
     private String title;
@@ -45,7 +45,7 @@ public class YuriBoardDTO {
 
     @Override
     public String toString() {
-        return "YuriBoardDTO{" +
+        return "YuriBoard{" +
                 "bno=" + bno +
                 ", title='" + title + '\'' +
                 ", content='" + content + '\'' +

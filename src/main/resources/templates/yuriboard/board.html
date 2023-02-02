@@ -17,12 +17,16 @@
     <th>글쓴이</th>
   </tr>
 
-  <tr th:each="list=${list}">
+  <tr th:each="list:${list}">
   <td th:text="${list.bno}">글번호</td>
-<!--  <td><a th:text="${list.title}" th:href="@{detail/{no}(no=${bno})}">글제목</a></td>-->
+  <td><a th:text="${list.title}" th:href="@{/yuriboard/detail/{no}(no=${list.bno})}">글제목</a></td>
    <td th:text="${list.content}">글내용</td>
    <td th:text="${list.userid}">글쓴이</td>
   </tr>
+
+    <tr>
+        <td colspan="4"><a th:href="@{/yuriboard/register}">글쓰기</a></td>
+    </tr>
 </table>
 
 </body>

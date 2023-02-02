@@ -11,27 +11,40 @@
 
     <tr>
         <th>글번호</th>
-        <td>글번호</td>
+        <td th:text="${board.bno}">글번호</td>
     </tr>
 
     <tr>
         <th>글제목</th>
-        <td>글제목</td>
+        <td th:text="${board.title}">글제목</td>
     </tr>
-
     <tr>
         <th>글내용</th>
-        <td>글내용</td>
+        <td th:text="${board.content}">글내용</td>
+    </tr>
+    <tr>
+        <th>글쓴이</th>
+        <td th:text="${board.userid}">글쓴이</td>
     </tr>
 
     <tr>
-        <th>글쓴이</th>
-        <td>글쓴이</td>
+        <th>수정하기</th>
+        <td><a th:href="@{/yuriboard/update/{no}(no=${board.bno})}"><button>수정!</button></a></td>
     </tr>
 
+    <tr>
+        <th>삭제하기</th>
+        <td><a th:href="@{/yuriboard/delete/{no}(no=${board.bno})}"><button>삭제하기!!</button></a></td>
+    </tr>
+
+    <tr>
+        <th>리스트로 가기</th>
+        <td><a th:href="@{/yuriboard/board}"><button>리스트로!</button></a></td>
+    </tr>
 
 </table>
 
 
 </body>
+</html>
 </html>

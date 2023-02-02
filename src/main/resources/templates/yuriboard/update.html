@@ -6,38 +6,36 @@
     <title>Title</title>
 </head>
 <body>
-<h1>글쓰기창입니당.</h1>
-
-<form th:action = "@{/yuriboard/register}" method="post">
 
 <table>
+<form th:action="@{/yuriboard/update/{bno}(bno=${board.bno})}" method="post">
+<!--    /{no}(no=${board.bno})-->
 
     <tr>
         <th>글제목</th>
-        <td><input type="text" name = "title"></td>
+        <td><input th:placeholder="${board.title}" name = "title"></td>
     </tr>
     <tr>
         <th>글내용</th>
-        <td><input type="text" name="content"></td>
+        <td><input th:placeholder="${board.content}" name="content"></td>
     </tr>
-
     <tr>
         <th>글쓴이</th>
-        <td><input type="text" name = "userid"></td>
-    </tr>
-    <tr>
-        <th>등록하기</th>
-        <td><button type="submit">등록!</button></td>
+        <td><input th:placeholder="${board.userid}" name="userid"></td>
     </tr>
 
+    <tr>
+        <th>수정완료하기</th>
+        <td><button type="submit">수정!</button></td>
+    </tr>
+</form>
     <tr>
         <th>리스트로 가기</th>
         <td><a th:href="@{/yuriboard/board}"><button>리스트로!</button></a></td>
     </tr>
 
-
 </table>
-</form>
+
 
 
 </body>
