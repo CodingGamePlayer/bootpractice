@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시판 리스트</title>
+</head>
+<body>
+<h3>하이하이룽</h3>
+<table>
+
+
+  <tr>
+    <th>글번호</th>
+    <th>글제목</th>
+    <th>글내용</th>
+    <th>글쓴이</th>
+  </tr>
+
+  <tr th:each="list=${list}">
+  <td th:text="${list.bno}">글번호</td>
+<!--  <td><a th:text="${list.title}" th:href="@{detail/{no}(no=${bno})}">글제목</a></td>-->
+   <td th:text="${list.content}">글내용</td>
+   <td th:text="${list.userid}">글쓴이</td>
+  </tr>
+</table>
+
+</body>
+</html>
+</html>
