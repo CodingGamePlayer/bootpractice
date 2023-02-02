@@ -18,5 +18,5 @@ public class BoardDto {
     private String content;
     private String writer;
     private LocalDate date;
-private String jhd;
+
 }
