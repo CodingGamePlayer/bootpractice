@@ -16,4 +16,5 @@ public interface ArticleService {
 
     public int deleteOne(int id);
 
+
 }
