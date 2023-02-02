@@ -23,7 +23,7 @@ public class ArticleController {
         List<ArticleDto> articles = articleService.selectAll();
         model.addAttribute("articles", articles);
 
-        articles.forEach(article -> log.info(String.valueOf(article)));
+//        articles.forEach(article -> log.info(String.valueOf(article)));
 
         return "user/article/articles";
     }
