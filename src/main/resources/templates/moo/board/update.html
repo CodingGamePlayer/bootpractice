@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>글 수정하기</title>
+</head>
+<body>
+<div>
+<h1>글 수정하기</h1>
+    <form>
+        <label>userID</label>
+    <input type="text" id="userid" th:value="${board.userid}" name="userid"><br>
+        <label>제목</label>
+        <input type="text" id="title" th:value="${board.title}" name="title"><br>
+        <label>내용</label>
+        <input type="text" id="body" th:value="${board.body}" name="body"><br>
+    <input type="hidden" th:value="${board.id}" name="id" id="id">
+        <div>
+            <button type="button" class="btn btn-success me-1" onclick="location.href='/list'">뒤로가기</button>
+            <button type="button" class="btn btn-primary" id="board-update-button">수정완료</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    {
+        const updateBtn = document.querySelector('#board-update-button');
+        const id = document.querySelector('#id').value;
+        updateBtn.addEventListener("click", () => {
+
+            const board = {
+                id : document.querySelector('#id').value,
+                title : document.querySelector('#title').value,
+                body : document.querySelector('#body').value,
+                userid : document.querySelector('#userid').value
+            }
+
+            const url = "/api/board/update";
+            fetch(url, {
+                method : "PUT",
+                body : JSON.stringify(board),
+                headers : {
+                    "Content-Type" : "application/json"
+                }
+            }).then(response => {
+                const msg = (response.ok) ? "글 수정이 되었습니다" : "글 수정에 실패했습니다.";
+                alert(msg);
+
+                window.location.href = "http://localhost:9000/board/"+ id +"/detail";
+            });
+        })
+    }
+</script>
+</body>
+</html>

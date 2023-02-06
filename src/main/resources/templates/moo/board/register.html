@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>글 추가하기</title>
+</head>
+<body>
+
+<h1>글 추가하기</h1>
+<!-- 파일 등록을 위해 enctype="multipart/form-data" 을 선언 -->
+<form th:action="@{/register}" method="post" enctype="multipart/form-data">
+    <table>
+        <tr>
+            <td>제목</td>
+            <td>
+                <input name="title" id="title" PLACEHOLDER="제목">
+            </td>
+        </tr>
+        <tr>
+            <td>내용</td>
+            <td>
+                <input name="body" id="body" PLACEHOLDER="내용">
+            </td>
+        </tr>
+        <td>작성자</td>
+        <td>
+            <input name="userid" id="userid" PLACEHOLDER="작성자">
+        </td>
+        </tr>
+        <tr>
+            <td><label class="col-sm-2 col-form-label"><strong>첨부 파일 </strong></label>
+                <input name="file" type="file" class="custom-file-input" id="customFile"/></td>
+            <br>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" class="btn btn-success me-1" onclick="location.href='/list'">뒤로가기</button>
+                <button type="button" id="board-create-button">작성완료</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+<script>
+    {
+        const boardCreateBtn = document.querySelector('#board-create-button');
+
+        boardCreateBtn.addEventListener("click", function () {
+            console.log('글 작성하기 버튼이 클릭 되었습니다.');
+
+            const board = {
+                title: document.querySelector('#title').value,
+                body: document.querySelector('#body').value,
+                userid: document.querySelector('#userid').value
+            };
+
+            console.log(board);
+
+            const url = "/api/board/register";
+            fetch(url, {
+                method: "POST",
+                body: JSON.stringify(board),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            }).then(response => {
+                const msg = (response.ok) ? "글이 등록되었습니다." : "글 등록 실패!";
+                alert(msg);
+
+                window.location.href = "http://localhost:9000/list";
+            })
+        })
+    }
+</script>
+</body>
+</html>
