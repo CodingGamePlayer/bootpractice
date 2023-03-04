@@ -11,15 +11,12 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class ArticleDto {
+public class BoardDto {
 
-    private int id;
+    private int bno;
     private String title;
-    private String body;
-    private LocalDate regdate;
-    private LocalDate moddate;
-    private String userid;
+    private String content;
+    private String writer;
+    private LocalDate date;
 
-    
-    
 }
